@@ -1,0 +1,583 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background: linear-gradient(
+        135deg,
+        #0f0f0f,
+        #171717,
+        #0d0d0d
+    );
+    color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* //navbar */
+
+
+.navbar {
+    padding: 15px 50px;
+    background: transparent;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 120px;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #00ffd5 !important;
+}
+
+/* HOME PAGE */
+.Details{
+  text-align: center;
+  margin-top: 50px;
+  }
+ .buttons{
+  text-align: center;
+  margin-top: 20px;
+  
+  
+  } 
+.button1 button,
+.button2 button{
+   padding:9px;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.hero-line {
+  width: 180px;
+  height: 4px;
+  background-color: #0d0d0d; /* Match your theme color */
+  border-radius: 10px;
+  margin: 25px auto;
+}
+
+/* projects */
+.card{
+  margin-left: 100px;
+  border-radius: 15px;
+
+  background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: none;
+    color:#8FEBDD;
+
+}
+
+
+/* background */
+
+.home::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+        rgba(0, 255, 200, 0.18),
+        transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+/* home */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Glow */
+.hero-glow {
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(69,217,208,0.28) 0%,
+        rgba(69,217,208,0.15) 35%,
+        rgba(69,217,208,0.06) 60%,
+        transparent 80%
+    );
+
+    filter: blur(120px);
+
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.name{
+    font-size: 4.5rem;
+    color: white;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 15px rgba(69,217,208,.25),
+        0 0 35px rgba(69,217,208,.15);
+}
+
+/* color */
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==============================
+        ROOT COLORS
+===============================*/
+:root{
+    --bg-color:#111111;
+
+    --primary-text:#B8F4EA;
+    --secondary-text:#9DB4B2;
+
+    --accent:#8FEBDD;
+    --accent-hover:#6DE2D3;
+
+    --button-text:#111111;
+
+    --border:rgba(184,244,234,.25);
+
+    --shadow:rgba(184,244,234,.15);
+}
+
+/*==============================
+        GLOBAL
+===============================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg-color);
+    color:var(--primary-text);
+    font-family:'Poppins',sans-serif;
+}
+
+/*==============================
+        TEXT
+===============================*/
+
+h1,h2,h3,h4,h5,h6{
+    color:var(--primary-text);
+    font-weight:700;
+}
+
+p{
+    color:var(--secondary-text);
+    line-height:1.8;
+}
+
+span{
+    color:var(--primary-text);
+}
+
+a{
+    color:var(--primary-text);
+    text-decoration:none;
+    transition:.3s;
+}
+
+a:hover{
+    color:var(--accent);
+}
+
+/*==============================
+        HERO
+===============================*/
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    text-align:center;
+    overflow:hidden;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hello{
+    color:var(--secondary-text);
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.name{
+    font-size:72px;
+    font-weight:800;
+    color:var(--primary-text);
+
+    text-shadow:
+    0 0 12px rgba(184,244,234,.25),
+    0 0 25px rgba(184,244,234,.15);
+}
+
+.hero p{
+    font-size:24px;
+    color:var(--secondary-text);
+    margin-top:18px;
+}
+
+/*==============================
+        GLOW
+===============================*/
+
+.hero-glow{
+    position:absolute;
+
+    width:850px;
+    height:850px;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(184,244,234,.18) 0%,
+    rgba(184,244,234,.09) 35%,
+    rgba(184,244,234,.03) 65%,
+    transparent 80%);
+
+    filter:blur(100px);
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+/*==============================
+        LINE
+===============================*/
+
+.hero-line{
+    width:220px;
+    height:3px;
+    background:var(--primary-text);
+    margin:35px auto;
+    border-radius:10px;
+    opacity:.8;
+}
+
+/*==============================
+        BUTTONS
+===============================*/
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    /* Added padding */
+    padding: 30px 0;
+}
+
+.buttons button{
+    padding: 16px 38px;
+
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .35s;
+    font-weight: 600;
+
+    /* CHANGED: Force text color */
+    color: #8FEBDD !important;
+}
+
+/* Filled Button */
+
+.button1 button{
+    background: transparent;   /* or your preferred background */
+    border: 2px solid #8FEBDD;
+}
+
+/* Outline Button */
+
+.button2 button{
+    background: transparent;
+    border: 2px solid #8FEBDD;
+}
+
+.button1 button:hover,
+.button2 button:hover{
+    background: rgba(143,235,221,0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(143,235,221,0.2);
+}
+/*==============================
+        NAVBAR
+===============================*/
+
+.navbar{
+    background:#161616;
+}
+
+.navbar a{
+    color:var(--primary-text);
+    font-weight:500;
+}
+
+.navbar a:hover{
+    color:var(--accent);
+}
+
+/*==============================
+        SECTIONS
+===============================*/
+
+section{
+    padding:100px 8%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:45px;
+}
+
+section p{
+    color:var(--secondary-text);
+}
+
+
+/* send message button */
+
+.success-message{
+    margin-top:20px;
+    color:#8FEBDD;
+    background:rgba(143,235,221,.1);
+    border:1px solid rgba(143,235,221,.25);
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* Contact Cards */
+.card{
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(143,235,221,0.2);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(143,235,221,0.25);
+    border-color: #8FEBDD;
+}
+
+/* Card Text */
+.card p{
+    margin: 0;
+    color: #8FEBDD;
+}
+
+.card p:first-child{
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* PROJECT CARD */
+
+.project-card{
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(143,235,221,.25);
+    border-radius: 28px;
+
+    padding: 35px;
+
+    min-height: 620px;
+
+    transition: .35s ease;
+
+    color: #B8F4EA;
+}
+
+/* Curved top-right shape */
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    right:-130px;
+    top:-130px;
+
+    border-radius:50%;
+
+    background:rgba(143,235,221,.18);
+}
+
+/* Hover */
+
+.project-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#8FEBDD;
+
+    box-shadow:0 0 30px rgba(143,235,221,.18);
+}
+
+/* Title */
+
+.project-title{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#B8F4EA;
+
+    margin-bottom:25px;
+}
+
+/* Description */
+
+.project-description{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#C8E7E3;
+
+    margin-bottom:30px;
+}
+
+/* Skills */
+
+.tech-stack{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:30px;
+}
+
+.tech-stack span{
+
+    background:rgba(143,235,221,.12);
+
+    border:1px solid rgba(143,235,221,.25);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    color:#B8F4EA;
+}
+
+/* Divider */
+
+.project-card hr{
+
+    border-color:rgba(255,255,255,.18);
+
+    margin:30px 0;
+}
+
+/* Bottom Links */
+
+.project-links{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.project-links a{
+
+    text-decoration:none;
+
+    color:#B8F4EA;
+
+    font-weight:600;
+
+    font-size:20px;
+
+    transition:.3s;
+}
+
+.project-links a:hover{
+
+    color:white;
+}
