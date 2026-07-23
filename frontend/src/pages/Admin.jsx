@@ -1,10 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../config";
 
 function Admin() {
   const navigate = useNavigate();
 
   const [contacts, setContacts] = useState([]);
+
+  const fetchContacts = useCallback(async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const response = await fetch(`${API_URL}/api/contact`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 401) {
+        localStorage.removeItem("token");
+        navigate("/manage");
+        return;
+      }
+
+      const data = await response.json();
+      setContacts(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [navigate]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -15,62 +39,36 @@ function Admin() {
     }
 
     fetchContacts();
-  }, [navigate]);
-
-  const fetchContacts = async () => {
-  try {
-    const token = localStorage.getItem("token");
-
-    const response = await fetch("http://localhost:5000/api/contact", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (response.status === 401) {
-      localStorage.removeItem("token");
-      navigate("/manage");
-      return;
-    }
-
-    const data = await response.json();
-    setContacts(data);
-  } catch (error) {
-    console.log(error);
-  }
-};
+  }, [fetchContacts, navigate]);
 
   const deleteContact = async (id) => {
-  const confirmDelete = window.confirm(
-    "Are you sure you want to delete this message?"
-  );
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this message?"
+    );
 
-  if (!confirmDelete) return;
+    if (!confirmDelete) return;
 
-  try {
-    const token = localStorage.getItem("token");
+    try {
+      const token = localStorage.getItem("token");
 
-    const response = await fetch(
-      `http://localhost:5000/api/contact/${id}`,
-      {
+      const response = await fetch(`${API_URL}/api/contact/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
         },
+      });
+
+      if (response.status === 401) {
+        localStorage.removeItem("token");
+        navigate("/manage");
+        return;
       }
-    );
 
-    if (response.status === 401) {
-      localStorage.removeItem("token");
-      navigate("/manage");
-      return;
+      fetchContacts();
+    } catch (error) {
+      console.log(error);
     }
-
-    fetchContacts();
-  } catch (error) {
-    console.log(error);
-  }
-};
+  };
 
   const logout = () => {
     localStorage.removeItem("token");
