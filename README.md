@@ -1,8 +1,8 @@
 # 🌐 Personal Portfolio
 A responsive personal portfolio website built using **React.js** and **Bootstrap** to showcase my skills, projects, education, and contact information.
 
-## 🚀 Live Demo
-🔗 https://portfolio-sigma-weld-18.vercel.app
+## 🚀 Live Dem
+🔗https://portfolio-i229.vercel.app/
 
 ## ⚙️ Backend
 🔗 https://portfolio-sdd9.onrender.com
